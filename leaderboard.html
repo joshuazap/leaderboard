@@ -1,0 +1,52 @@
+<head>
+  <title>Leaderboard</title>
+</head>
+<body>
+  <h1 class="text-center">Leaderboard</h1>
+  {{> leaderboard}}
+  {{> addPlayerForm}}
+</body>
+
+<template name="leaderboard">
+  <div class="row">
+    <p>Showing all {{player.count}} players.</p>
+    <br>
+    <ul>
+      {{#each player}}
+        <li class="player {{selectedClass}}">{{name}}: {{score}}</li>
+      {{/each}}
+    </ul>
+    {{#if selectedPlayer}}
+    <br>
+    <p class="all-caps">
+      Selected Player: <em>{{selectedPlayer.name}}</em>
+    </p>
+    <div class="expanded button-group" id="confirmmessage">
+      <button class="remove alert button">Remove Player</button>
+      <button class="decrement warning button">Take 5 points</button>
+      <button class="increment success button">Give 5 points</button>
+    </div>
+    {{/if}}
+  </div>
+</template>
+
+<template name="addPlayerForm">
+  <form>
+    <fieldset class="fieldset">
+      <legend>Add a Player</legend>
+
+      <div class="input-group expanded row">
+        <div class="large-5 medium-4 columns">
+            <input class="input-group-field" type="text" name="playerName" placeholder="Goku">
+        </div>
+        <div class="large-5 medium-4 columns">
+            <input class="input-group-field" type="number" name="playerScore" placeholder="9000+">
+        </div>
+        <div class="large-2 medium-3 columns">
+          <input type="submit" class="expanded button" value="Submit">
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</template>

@@ -1,0 +1,127 @@
+<template name="socialIconButtonGroup">
+  <div class="button-group">
+    <a class="button">facebook</a>
+    <a class="button">twitter</a>
+    <a class="button">instagram</a>
+    <a class="button">youtube</a>
+    <a class="button">pinterest</a>
+    <a class="button">google-plus</a>
+  </div>
+</template>
+
+<template name="magicalButtonSubmit">
+  <button class="button magical" type="submit" value="Submit">Journey forth</button>
+</template>
+
+<template name="ratingBar">
+        <legend>GameTree works better if you answer <em>honestly</em> on a scale from zero (0) to four (4).</legend>
+        <input type="radio" name="ChallengePoints" value="0" id="poop" required><label for="poop">0</label>
+        <input type="radio" name="ChallengePoints" value="1" id="bronze" required><label for="bronze">1</label>
+        <input type="radio" name="ChallengePoints" value="2" id="silver" required><label for="silver">2</label>
+        <input type="radio" name="ChallengePoints" value="3" id="gold" required><label for="gold">3</label>
+        <input type="radio" name="ChallengePoints" value="4" id="heart" required><label for="heart">4</label>
+
+        {{> magicalButtonSubmit}}
+</template>
+
+<template name="emailFooter">
+  Unsubscribe
+  We try hard to only send relevant messages. If you'd like to ensure that we don't send any further emails, you may unsubscribe with a single click:
+  {{> unsubscribeLink}}
+
+  Say Hello
+  1-888-GameTreeMe
+  Mon-Thurs: 9am to 9pm PST
+  Fri: 9am to 8pm PST
+  Sat: 9am to 1pm PST
+
+  {{> socialIconButtonGroup}}
+
+  Support
+  Technical Support
+  Customer Support
+  Frequent Questions
+
+  About us
+  Our story
+  Contact
+  Careers
+  Press
+  Retail Partners
+  Terms & Conditions
+  Legal
+  Your Privacy Rights
+  Blog
+  Innovation
+
+  Design credits
+
+  Copyright notice
+
+  Localization/Translation
+
+  Chat now
+</template>
+
+<template name="websiteFooter">
+  Subscribe to our newsletter
+
+  Say Hello
+  1-888-GameTreeMe
+  Mon-Thurs: 9am to 9pm PST
+  Fri: 9am to 8pm PST
+  Sat: 9am to 1pm PST
+
+  {{> socialIconButtonGroup}}
+
+  Support
+  Technical Support
+  Customer Support
+  Frequent Questions
+
+  About us
+  Our story
+  Contact
+  Careers
+  Press
+  Retail Partners
+  Terms & Conditions
+  Legal
+  Your Privacy Rights
+  Blog
+  Innovation
+  Design credits
+
+  Copyright notice
+
+  Localization/Translation
+
+  Chat now
+
+</template>
+
+<template name="emailTransaction">
+  Hi [user.firstName],
+
+  Thank you for signing up for GameTree! You made a great choice. At GameTree, we care about our users.
+
+  [email paragraphs selected from different topics: company information, gaming and community, explain how ratings work, read or find out more]
+
+  [company information] GameTree philosophy, mission, etc.
+
+  [gaming and community] We care about gaming and community as much as you do.
+
+  [explain how ratings work] GameTree's knowledge works when you rate games.
+
+  [read or find out more] We're all excited about getting GameTree started. You can read more about us in [news, social media].
+
+  [website profile, unsubscribe information] Click to customize your profile. Click to unsubscribe from future emails.
+
+  {{> emailFooter}}
+</template>
+
+<template name="email-marketing">
+</template>
+
+<template name="email-campaign">
+</template>
