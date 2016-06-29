@@ -43,11 +43,11 @@ if(Meteor.isClient){
     },
     'click .increment': function(){
       var selectedPlayer = Session.get('selectedPlayer');
-      PlayersList.update({ _id: selectedPlayer }, { $inc: { score: 5 } });
+      PlayersList.update({ _id: selectedPlayer }, { $inc: { score: 1 } });
     },
     'click .decrement': function(){
       var selectedPlayer = Session.get('selectedPlayer');
-      PlayersList.update({ _id: selectedPlayer }, { $inc: { score: -5 } });
+      PlayersList.update({ _id: selectedPlayer }, { $inc: { score: -1 } });
     }
   });
   Template.addPlayerForm.events({
