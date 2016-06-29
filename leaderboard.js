@@ -1,5 +1,4 @@
 PlayersList = new Mongo.Collection('players');
-UsersList = new Mongo.Collection('users');
 
 if(Meteor.isServer){
   console.log("Hello Server");
