@@ -1,9 +1,5 @@
 PlayersList = new Mongo.Collection('players');
 
-if(Meteor.isServer){
-  console.log("Hello Server");
-}
-
 if(Meteor.isClient){
   Template.leaderboard.helpers({
     'player': function(){
@@ -67,4 +63,8 @@ if(Meteor.isClient){
       e.target.playerScore.value = "";
     }
   });
+}
+
+if(Meteor.isServer){
+  console.log("Hello Server");
 }
