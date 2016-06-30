@@ -3,7 +3,8 @@ PlayersList = new Mongo.Collection('players');
 if(Meteor.isClient){
   Template.leaderboard.helpers({
     'player': function(){
-      return PlayersList.find({}, { sort: { score: -1, name: 1 }});
+      var currentUserId = Meteor.userId();
+      return PlayersList.find({ createdBy: currentUserId }, { sort: { score: -1, name: 1 } });
     },
     'otherHelperFunction': function(){
       return UsersList.find({name: "Yuki"});
