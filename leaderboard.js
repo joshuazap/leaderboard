@@ -54,11 +54,13 @@ if(Meteor.isClient){
   Template.addPlayerForm.events({
     'submit form': function(e){
       event.preventDefault();
+      var currentUserId = Meteor.userId();
       var playerNameVar = e.target.playerName.value;
       var playerScoreVar = e.target.playerScore.value;
       PlayersList.insert({
         name: playerNameVar,
-        score: Number(playerScoreVar)
+        score: Number(playerScoreVar),
+        createdBy: currentUserId
       });
       e.target.playerName.value = "";
       e.target.playerScore.value = "";
