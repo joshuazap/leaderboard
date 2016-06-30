@@ -2,12 +2,15 @@
   <title>Leaderboard</title>
 </head>
 <body>
+  <nav class="text-left">
+    {{> loginButtons}}
+  </nav>
   <h1 class="text-center">Leaderboard</h1>
   {{> leaderboard}}
-  {{> addPlayerForm}}
 </body>
 
 <template name="leaderboard">
+  {{#if currentUser}}
   <div class="row">
     <p>Showing all {{player.count}} players.</p>
     <br>
@@ -22,12 +25,16 @@
       Selected Player: <em>{{selectedPlayer.name}}</em>
     </p>
     <div class="expanded button-group" id="confirmmessage">
-      <button class="remove alert button">Remove Player</button>
-      <button class="decrement warning button">Take 5 points</button>
-      <button class="increment success button">Give 5 points</button>
+      <button class="remove alert button">Remove {{selectedPlayer.name}}</button>
+      <button class="decrement warning button">Remove a point</button>
+      <button class="increment success button">Add a point</button>
     </div>
     {{/if}}
+    {{> addPlayerForm}}
   </div>
+  {{else}}
+  <p class="all-caps text-center">You must be logged in to see this content.</p>
+  {{/if}}
 </template>
 
 <template name="addPlayerForm">
