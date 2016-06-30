@@ -6,9 +6,6 @@ if(Meteor.isClient){
       var currentUserId = Meteor.userId();
       return PlayersList.find({ createdBy: currentUserId }, { sort: { score: -1, name: 1 } });
     },
-    'otherHelperFunction': function(){
-      return UsersList.find({name: "Yuki"});
-    },
     'selectedClass': function(){
       var playerId = this._id;
       var selectedPlayer = Session.get('selectedPlayer');
