@@ -66,6 +66,8 @@ if(Meteor.isClient){
       e.target.playerScore.value = "";
     }
   });
+
+  Meteor.subscribe('thePlayers');
 }
 
 if(Meteor.isServer){
