@@ -25,7 +25,9 @@ if(Meteor.isClient){
     },
     'click .remove': function(){
       var selectedPlayer = Session.get('selectedPlayer');
-      PlayersList.remove({ _id: selectedPlayer });
+      // Move to methods
+      // PlayersList.remove({ _id: selectedPlayer });
+      Meteor.call('removePlayer', selectedPlayer);
     },
     'focus .focusTest': function(){
       console.log("Result of the focus test");
@@ -63,7 +65,7 @@ if(Meteor.isClient){
 }
 
 if(Meteor.isServer){
-  console.log("Hello Server");
+  // console.log("Hello Server");
   Meteor.publish('thePlayers', function() {
     var currentUserId = this.userId;
     return PlayersList.find({ createdBy: currentUserId });
@@ -83,5 +85,8 @@ Meteor.methods({
         createdBy: currentUserId
       });
     }
+  },
+  'removePlayer': function(selectedPlayer){
+    PlayersList.remove({ _id: selectedPlayer });
   }
 });
