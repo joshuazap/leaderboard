@@ -76,10 +76,12 @@ Meteor.methods({
     check(playerNameVar, String);
     check(playerScoreVar, Number);
     var currentUserId = Meteor.userId();
-    PlayersList.insert({
-      name: playerNameVar,
-      score: playerScoreVar,
-      createdBy: currentUserId
-    });
+    if(currentUserId){
+      PlayersList.insert({
+        name: playerNameVar,
+        score: playerScoreVar,
+        createdBy: currentUserId
+      });
+    }
   }
 });
