@@ -73,6 +73,8 @@ if(Meteor.isServer){
 Meteor.methods({
   'createPlayer': function(playerNameVar, playerScoreVar){
     // console.log("Hello methods");
+    check(playerNameVar, String);
+    check(playerScoreVar, Number);
     var currentUserId = Meteor.userId();
     PlayersList.insert({
       name: playerNameVar,
