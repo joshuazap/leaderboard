@@ -90,7 +90,7 @@ Meteor.methods({
   'removePlayer': function(selectedPlayer){
     check(selectedPlayer, String);
     var currentUserId = Meteor.userId();
-    if(currentUserid){
+    if(currentUserId){
       PlayersList.remove({ _id: selectedPlayer, createdBy: currentUserId });
     }
   }
