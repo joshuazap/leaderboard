@@ -87,6 +87,7 @@ Meteor.methods({
     }
   },
   'removePlayer': function(selectedPlayer){
+    check(selectedPlayer, String);
     PlayersList.remove({ _id: selectedPlayer });
   }
 });
