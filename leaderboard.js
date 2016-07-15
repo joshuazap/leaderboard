@@ -55,7 +55,8 @@ if(Meteor.isClient){
       event.preventDefault();
       var playerNameVar = e.target.playerName.value;
       var playerScoreVar = e.target.playerScore.value;
-      Meteor.call('createPlayer', playerNameVar, playerScoreVar);
+      var playerScoreVarToNum = Number(playerScoreVar);
+      Meteor.call('createPlayer', playerNameVar, playerScoreVarToNum);
       e.target.playerName.value = "";
       e.target.playerScore.value = "";
     }
