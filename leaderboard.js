@@ -102,7 +102,7 @@ Meteor.methods({
     var currentUserId = Meteor.userId();
     if (currentUserID) {
       PlayersList.update(
-        { _id: selectedPlayer },
+        { _id: selectedPlayer, createdBy: currentUserId },
         { $inc: {score: scoreValue} }
       );
     }
