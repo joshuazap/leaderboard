@@ -43,11 +43,13 @@ if(Meteor.isClient){
     },
     'click .increment': function(){
       var selectedPlayer = Session.get('selectedPlayer');
-      PlayersList.update({ _id: selectedPlayer }, { $inc: { score: 1 } });
+      // PlayersList.update({ _id: selectedPlayer }, { $inc: { score: 1 } });
+      Meteor.call('updateScore', selectedPlayer, 1);
     },
     'click .decrement': function(){
       var selectedPlayer = Session.get('selectedPlayer');
-      PlayersList.update({ _id: selectedPlayer }, { $inc: { score: -1 } });
+      // PlayersList.update({ _id: selectedPlayer }, { $inc: { score: -1 } });
+      Meteor.call('updateScore', selectedPlayer, -1);
     }
   });
   Template.addPlayerForm.events({
@@ -93,5 +95,11 @@ Meteor.methods({
     if(currentUserId){
       PlayersList.remove({ _id: selectedPlayer, createdBy: currentUserId });
     }
+  },
+  'updateScore': function(selectedPlayer, scoreValue){
+    PlayersList.update(
+      { _id: selectedPlayer },
+      { $inc: {score: scoreValue} }
+    );
   }
 });
