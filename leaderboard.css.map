@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,SAAS;EACP,WAAW,EAAE,IAAI;;AAEnB,EAAE;EACA,IAAI,EAAE,0BAAgB;EACtB,KAAK,EAPS,IAAI;EAQlB,MAAM,EAAE,GAAG;;AAEb,SAAS;EACP,MAAM,EAAE,GAAG;;AAEb,SAAS;EACP,cAAc,EAAE,SAAS",
+"sources": ["leaderboard.sass"],
+"names": [],
+"file": "leaderboard.css"
+}
