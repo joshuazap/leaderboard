@@ -98,6 +98,7 @@ Meteor.methods({
   },
   'updateScore': function(selectedPlayer, scoreValue){
     check(selectedPlayer, String);
+    check(scoreValue, Number);
     PlayersList.update(
       { _id: selectedPlayer },
       { $inc: {score: scoreValue} }
